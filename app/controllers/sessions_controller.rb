@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
             
 
             flash[:success] = "#{@current_user.name} signed in successfully"
-            redirect_to root_url
+            redirect_to root_path
         else
             flash[:danger] = "Incorrect email or password"
             render 'new'
@@ -22,6 +22,6 @@ class SessionsController < ApplicationController
     def delete
         log_out if logged_in?
         flash[:success] = "Successfully logged out"
-        redirect_to root_url
+        redirect_to root_path
     end
 end

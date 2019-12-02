@@ -9,6 +9,7 @@ class User < ApplicationRecord
                         uniqueness: { case_sensitive: false }
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
     has_secure_password
+    has_many :posts
 
     def User.digest(string)
         Digest::SHA1.hexdigest string

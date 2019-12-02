@@ -1,0 +1,6 @@
+<li>
+    <% if logged_in? %>
+        <%= User.find(post.user_id).name%>
+    <% end %>    
+    <%= post.body %>
+</li>
